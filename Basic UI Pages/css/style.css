@@ -1,0 +1,23 @@
+body {
+    background-color: lavender;
+}
+
+p {
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-heading {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+#submit {
+    background-color: purple;
+    color: white;
+}
+
+.navbar-main {
+    background-color: indigo;
+}

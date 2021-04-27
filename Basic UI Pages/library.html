@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library Management Portal</title>
+    <!--  Responsive  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Css links  -->
+    <link rel="stylesheet" href="css/librarystyle.css">
+    <link rel="stylesheet" href="css/demo.css">
+
+    <!--  Icon Links-->
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+</head>
+
+<body>
+    <h1>Library Management Portal <sub> <cite> -&#8220;more than just studying&#8220;</cite> </sub></h1><br>
+    <div class="container" id="container">
+        <!--  SignUp  -->
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" /><br>
+                <input type="text" placeholder="Date of Birth" onfocus="(this.type='date')"
+                    onblur="if(this.value==''){this.type='text'}"><br>
+                <input type="email" placeholder="Email" /><br>
+                <input type="password" placeholder="Password" /><br>
+                <button>Sign Up</button>
+            </form>
+        </div>
+
+        <!--  SignIn  -->
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" /><br>
+                <input type="password" placeholder="Password" /><br>
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+
+        <!--  For sliding between SignIn and SignUp  -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <!--  To navigate to SignIn  -->
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p> You are the best at what you do, We missed you !! </p>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+
+                <!--  To navigate to SignIn  -->
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Mate! </h1>
+                    <p>Time is precious for both the librarians and the users. Library management keep track of the
+                        books and their checkouts, as well as members subscriptions and profiles. It easily help to
+                        catalog books and keep proper records of books issued, reissued, and those not returned</p>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Script Part  -->
+    <script id="rendered-js">
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+</body>
+
+</html>
