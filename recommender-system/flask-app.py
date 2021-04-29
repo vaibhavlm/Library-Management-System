@@ -1,5 +1,5 @@
 # importing Flask and other modules
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, url_for, redirect
 from flask_cors import CORS
 import book_recommender
 
@@ -17,16 +17,15 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/book', methods=["POST"])
+@app.route('/result', methods=["POST"])
 def process():
     if request.method == "POST":
         book_selected = request.form.getlist('book-choice')
         ratings = request.form.getlist('book-rating')
-        # print(book_selected)
-        # print(ratings)
         user_data = (book_selected, ratings)
         res = book_recommender.main(user_data)
         return jsonify(res)
+        # return render_template('output.html', res=res)
 
 
 if __name__ == '__main__':

@@ -77,14 +77,6 @@ def main(data):
         user lng
         user replies
     """
-    user_info = {'Martin Eden': 5,
-                 'Pet Sematary': 5,
-                 'One Hundred Years of Solitude': 5,
-                 'Ham on Rye': 5,
-                 'The Grapes of Wrath': 4,
-                 "Cat's Cradle": 5,
-                 'Crime and Punishment': 4,
-                 'The Trial': 4}
 
     user_info = {}
 
