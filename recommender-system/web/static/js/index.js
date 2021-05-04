@@ -35,9 +35,6 @@ $(function(){
         $(this).hide();
     });
 
-    $("#get-started").hover(function () {
-    });
-
     $("#hover-to-hide").hover(function() {
         $('.js-example-basic-single').select2();
     });
