@@ -1,0 +1,26 @@
+body{
+    background-color: lavender;
+}
+#btn-retry{
+    background-color: purple;
+    color: white;
+}
+#btn-retry:hover{
+    background-color: white;
+    color: purple;
+    border: 1px solid purple;
+}
+table{
+    background-color: white;
+}
+th{
+    background-color: purple;
+    color: white;
+}
+td{
+    color: darkslateblue;
+}   
+tr:hover td{
+    background-color: violet;
+    color: white;
+}
