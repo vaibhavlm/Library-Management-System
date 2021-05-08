@@ -29,7 +29,7 @@
 <div class="container">
     <h1 class="display-4 mb-4 text-center">These are the top 10 recommended selections!</h1>
     {{ table }}
-    <p class="text-center"><button class="btn" id="btn-retry">Try out a different recommendation!</button></p>
+    <p class="text-center"><button class="btn" id="btn-retry" onclick="window.location.href='{{ url_for( 'home') }}';">Try out a different recommendation!</button></p>
 </div>
 
 </body>
