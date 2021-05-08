@@ -26,6 +26,12 @@ function addRow(){
 
     });
 }
+
+// function to make sure the user chooses different books and gives at least 1 different rating in their selction
+function validateInput(){
+
+}
+
 $(function(){
 
     $("#get-started").on('click', function(){
