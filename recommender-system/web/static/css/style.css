@@ -1,26 +1,39 @@
-body{
+body {
     background-color: lavender;
 }
-#btn-retry{
+
+header {
+    background-color: darkorchid;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn.btn-primary {
+    background-color: darkviolet;
+    color: white;
+    border: 1px solid darkviolet;
+}
+
+.btn.btn-primary:hover {
     background-color: purple;
     color: white;
-}
-#btn-retry:hover{
-    background-color: white;
-    color: purple;
     border: 1px solid purple;
 }
-table{
+
+table {
     background-color: white;
 }
-th{
+
+th {
     background-color: purple;
     color: white;
 }
-td{
+
+td {
     color: darkslateblue;
-}   
-tr:hover td{
-    background-color: violet;
+}
+
+tr:hover td {
+    background-color: darkmagenta;
     color: white;
 }
