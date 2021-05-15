@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,11 +15,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- For bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
     <!--Select 2 utility-->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
@@ -26,20 +31,107 @@
     <script src="http://d3js.org/d3.v3.js"></script>
     <script type=text/javascript src="js/index.js"></script>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/vertical-style.css">
+
+    <!-- Sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
 </head>
-<body>
 
+<body style="background-color: #F5F7FF;">
+<header class="fluid-container text-center">
+    <h1 class="py-3">Book Recommender System</h1>
+</header>
 <div class="container text-center" id="main-container">
-    <h1 class="display-4 my-3">Book Recommender System</h1>
-        <h4 class="mb-3">Select as Many books and ratings as you like!</h4>
-        <button id="get-started" class="btn btn-outline-info mb-3">Get Started</button>
-        <div id="hover-to-hide">&nbsp;</div>
-        <form id='select-form' action="{{ url_for('process')}}" method='post'>
-            <div class="input-group row offset-2" id="container-select" >
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">Select a minimum of 5 <strong>different</strong> books and their corresponding
+                    ratings to get started</h4>
+                <form id='select-form' action="{{ url_for('process')}}" method='post'>
+                    <div class="input-group col-12 mb-3">
+                        <table class="display expandable-table w-100 mb-3">
+                            <thead>
+                            <th></th>
+                            <th>Select a genre to filter the recommendations</th>
+                            <th></th>
+                            </thead>
+                        </table>
+                        <select class="js-example-basic-single" id="select-genre" name='genre-choice' required>
+                            <option value="Art">Art</option>
+                            <option value="Biography">Biography</option>
+                            <option value="Business">Business</option>
+                            <option value="Chick Lit">Chick Lit</option>
+                            <option value="Children's">Children's</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Classics">Classics</option>
+                            <option value="Comics">Comics</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Contemporary">Contemporary</option>
+                            <option value="Cookbooks">Cookbooks</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Ebooks">Ebooks</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Gay and Lesbian">Gay and Lesbian</option>
+                            <option value="Graphic Novels">Graphic Novels</option>
+                            <option value="Historical Fiction">Historical Fiction</option>
+                            <option value="History">History</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Humor and Comedy">Humor and Comedy</option>
+                            <option value="Manga">Manga</option>
+                            <option value="Memoir">Memoir</option>
+                            <option value="Music">Music</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Nonfiction">Nonfiction</option>
+                            <option value="Paranormal">Paranormal</option>
+                            <option value="Philosophy">Philosophy</option>
+                            <option value="Poetry">Poetry</option>
+                            <option value="Psychology">Psychology</option>
+                            <option value="Religion">Religion</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Science">Science</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Self Help">Self Help</option>
+                            <option value="Suspense">Suspense</option>
+                            <option value="Spirituality">Spirituality</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Young Adult">Young Adult</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="container-select">
+                        <table id="table-show" class="display expandable-table w-100">
+                            <thead>
+                            <th>Title</th>
+                            <th>Rating</th>
+                            </thead>
+                        </table>
+                    </div>
+                    <button type="button" id='submit-btn' class="btn btn-primary mt-2" onclick=validateInput()>
+                        <i class="fas fa-check-square"></i>&nbsp; Submit
+                    </button>
+                    <button type="button" id="add-row-btn" class="btn btn-success mt-2" onclick=addRow()>
+                        <i class="fas fa-plus-square"></i>&nbsp; Add another row
+                    </button>
+                    <button type="button" id="del-row-btn" class="btn btn-danger mt-2" onclick=deleteRow()>
+                        <i class="fas fa-minus-square"></i>&nbsp; Delete Last Row
+                    </button>
+                    <button type="reset" class="btn btn-secondary mt-2">
+                        <i class="fas fa-redo-alt"></i>&nbsp; Reset
+                    </button>
+                </form>
             </div>
-            <button id='submit' class="btn btn-success mt-2" type="submit" hidden>Submit</button>
-        </form>
+        </div>
+    </div>
 </div>
-
 </body>
+
 </html>
